@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOLARES</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+  <div class="title">☀ SOLARES ☀</div>
+  <div class="subtitle">Colete energia solar — evite os vilões da rede</div>
+</header>
+
+<div class="hud">
+  <div class="hud-card">
+    <div class="hud-label">Energia</div>
+    <div class="hud-val" id="score">0</div>
+  </div>
+  <div class="hud-card">
+    <div class="hud-label">Vidas</div>
+    <div class="hud-val lives" id="lives">☀☀☀</div>
+  </div>
+  <div class="hud-card">
+    <div class="hud-label">Nível</div>
+    <div class="hud-val" id="level">1</div>
+  </div>
+</div>
+
+<div class="game-area">
+  <canvas id="canvas"></canvas>
+</div>
+
+<div id="msg-bar">Pressione Iniciar ou use as setas do teclado</div>
+
+<div class="controls">
+  <button id="btn-start">▶ Iniciar</button>
+  <button id="btn-pause">⏸ Pausar</button>
+  <button id="btn-reset" class="warn">↺ Reiniciar</button>
+</div>
+
+<div class="dpad">
+  <div class="empty"></div>
+  <button id="up">↑</button>
+  <div class="empty"></div>
+  <button id="left">←</button>
+  <button id="down">↓</button>
+  <button id="right">→</button>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#ffd700;box-shadow:0 0 6px #ffd700"></div>Sol pequeno = 10 pts</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#ff8c00;width:16px;height:16px;box-shadow:0 0 10px #ff8c00"></div>Sol grande = 50 pts + poder</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#4fc3f7"></div>Placa solar (você)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#ff4444"></div>Vilões da rede</div>
+</div>
+
+<script src="script.js"></script>>
+</body>
+</html>

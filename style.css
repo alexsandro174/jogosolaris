@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #050a14;
+    --surface: #0d1829;
+    --surface2: #112240;
+    --border: #1e3a6e;
+    --sun-yellow: #ffd700;
+    --sun-orange: #ffa500;
+    --panel-blue: #4fc3f7;
+    --panel-dark: #0d47a1;
+    --text: #e8f4fd;
+    --muted: #6b8fbd;
+    --accent: #00e5ff;
+    --danger: #ff4444;
+    --glow: 0 0 20px rgba(0,229,255,0.3);
+  }
+
+  html, body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 16px 40px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(22px, 5vw, 40px);
+    letter-spacing: 0.12em;
+    color: var(--sun-yellow);
+    text-shadow: 0 0 30px rgba(255,215,0,0.6), 0 0 60px rgba(255,165,0,0.3);
+    line-height: 1;
+  }
+  .subtitle {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(10px, 2vw, 13px);
+    color: var(--muted);
+    letter-spacing: 0.3em;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  .hud {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+    align-items: stretch;
+  }
+
+  .hud-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    min-width: 90px;
+  }
+  .hud-label {
+    font-family: 'Orbitron', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hud-val {
+    font-family: 'Orbitron', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .hud-val.lives { color: var(--sun-yellow); font-size: 18px; }
+
+  .game-area {
+    position: relative;
+  }
+
+  canvas {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,229,255,0.08), inset 0 0 60px rgba(0,0,0,0.5);
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+    text-transform: uppercase;
+  }
+  button:hover { background: rgba(0,229,255,0.1); box-shadow: var(--glow); }
+  button:active { transform: scale(0.96); }
+  button.warn { color: #ff7043; border-color: #ff7043; }
+  button.warn:hover { background: rgba(255,112,67,0.1); box-shadow: 0 0 20px rgba(255,112,67,0.3); }
+
+  .dpad {
+    display: grid;
+    grid-template-columns: repeat(3, 44px);
+    grid-template-rows: repeat(3, 44px);
+    gap: 4px;
+    margin-top: 14px;
+    justify-content: center;
+  }
+  .dpad button {
+    width: 44px; height: 44px;
+    padding: 0;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px;
+  }
+  .dpad .empty { width: 44px; height: 44px; }
+
+  #msg-bar {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-top: 12px;
+    text-align: center;
+    min-height: 18px;
+    text-transform: uppercase;
+  }
+
+  .legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
